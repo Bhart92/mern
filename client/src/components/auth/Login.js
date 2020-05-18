@@ -18,12 +18,12 @@ const Login = ({ login, isAuthenticated }) => {
 
     //Redirect if logged in
     if(isAuthenticated){
-        return <Redirect to="/dashboard" />
+        return <Redirect to="/" />
     }
     return <Fragment>
         <h1 className="large text-primary">Sign In</h1>
         <p className="lead"><i className="fas fa-user"></i> Sign into Your Account</p>
-        <form onSubmit={e => onSubmit(e)} className="form" action="create-profile.html">
+        <form onSubmit={onSubmit} className="form" action="create-profile.html">
             <div className="form-group">
                 <input 
                 type="email" 
