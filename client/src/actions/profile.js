@@ -29,10 +29,10 @@ export const getCurrentProfile = () => async dispatch => {
   }
 };
 
-// Get all profiles
+
+//get all profiles
 export const getProfiles = () => async dispatch => {
   dispatch({ type: CLEAR_PROFILE });
-
   try {
     const res = await axios.get('/api/profile');
 
@@ -48,13 +48,13 @@ export const getProfiles = () => async dispatch => {
   }
 };
 
-// Get profile by ID
+//get profile by id
 export const getProfileById = userId => async dispatch => {
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
     dispatch({
-      type: GET_PROFILE,
+      type: GET_PROFILES,
       payload: res.data
     });
   } catch (err) {
@@ -64,6 +64,7 @@ export const getProfileById = userId => async dispatch => {
     });
   }
 };
+
 
 // Get Github repos
 export const getGithubRepos = username => async dispatch => {
